@@ -45,10 +45,6 @@ export default {
     {
       src: '~/assets/themes.css',
       lang: 'css'
-    },
-    {
-      src: '~/node_modules/highlight.js/styles/dracula.css',
-      lang: 'css'
     }
   ],
 
@@ -64,7 +60,6 @@ export default {
    */
   modules: [
     '@nuxtjs/robots',
-    '@nuxtjs/markdownit',
     '@nuxtjs/style-resources',
     '@nuxtjs/svg-sprite',
     'nuxt-interpolation'
@@ -76,18 +71,7 @@ export default {
   plugins: [
     { src: '~/app/hotkeys.js', mode: 'client' },
     { src: '~/app/contentful.js', mode: 'server' },
-    { src: '~/app/markdown-renderer.js' },
   ],
-
-  /*
-   ** Processes markdown
-   */
-  markdownit: {
-    injected: true,
-    use: [
-      'markdown-it-highlightjs'
-    ]
-  },
   tailwindcss: {
     jit: true
   },
@@ -127,21 +111,21 @@ export default {
    */
   generate: {
     fallback: true,
-    routes: () => {
-      const client = createClient(process.env.CTF_SPACE_ID, process.env.CTF_CD_ACCESS_TOKEN)
-      return Promise.all([
-        client.getEntries({
-          content_type: 'blogPost'
-        }),
-        client.getEntries({
-          content_type: 'project'
-        })
-      ]).then(([writing, projects]) => {
-        return [
-          ...writing.items.map(entry => `/on-writing/${entry.fields.slug}`),
-          ...projects.items.map(entry => `/on-projects/${entry.fields.slug}`)
-        ]
-      })
-    }
+    // routes: () => {
+    //   const client = createClient(process.env.CTF_SPACE_ID, process.env.CTF_CD_ACCESS_TOKEN)
+    //   return Promise.all([
+    //     client.getEntries({
+    //       content_type: 'blogPost'
+    //     }),
+    //     client.getEntries({
+    //       content_type: 'project'
+    //     })
+    //   ]).then(([writing, projects]) => {
+    //     return [
+    //       ...writing.items.map(entry => `/on-writing/${entry.fields.slug}`),
+    //       ...projects.items.map(entry => `/on-projects/${entry.fields.slug}`)
+    //     ]
+    //   })
+    // }
   }
 }

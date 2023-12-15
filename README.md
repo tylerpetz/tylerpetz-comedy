@@ -1,6 +1,6 @@
-# tyler.works
+# tylerpetz.com
 
-> tyler petz (web developer) portfolio website
+> tyler petz (comedian) comedy website
 
 ## Build Setup
 

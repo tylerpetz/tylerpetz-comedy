@@ -1,4 +1,4 @@
-export const defaultTheme = 'wavez'
+export const defaultTheme = 'oblivion'
 export const themes = [
   {
     id: '8008',

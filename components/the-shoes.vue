@@ -5,15 +5,15 @@ export default {
     return {
       links: [
         {
-          name: 'Github',
-          url: 'https://github.com/tylerpetz',
-          icon: 'fab fa-github'
+          name: 'Instagram',
+          url: 'https://www.instagram.com/tyler.petz',
+          icon: 'fab fa-instagram'
         },
-        {
-          name: 'Linkedin',
-          url: 'https://www.linkedin.com/in/tyler-petz-11734818/',
-          icon: 'fab fa-linkedin'
-        }
+        // {
+        //   name: 'Linkedin',
+        //   url: 'https://www.linkedin.com/in/tyler-petz-11734818/',
+        //   icon: 'fab fa-linkedin'
+        // }
       ]
     }
   }
@@ -24,7 +24,7 @@ export default {
   <footer class="h-20 px-4 md:px-8 bg-mod-cap text-mod-legend flex items-center print:hidden">
     <div class="w-full max-w-screen-lg mx-auto flex justify-between items-center">
       <p class="text-sm sm:text-base md:text-lg">
-        Tyler Petz <span class="hidden sm:inline">(web developer)</span> &copy; {{ new Date().getFullYear() }}
+        Tyler Petz &copy; {{ new Date().getFullYear() }}
       </p>
       <ul class="flex flex-row space-x-4 text-lg md:text-2xl">
         <li
@@ -38,7 +38,10 @@ export default {
             rel="noopener noreferrer"
             :aria-label="`Tyler's ${link.name}`"
           >
-            <i :class="link.icon" />
+            <svg-icon
+              class="h-6 w-6 text-theme-link hover:text-theme-link-hover transition-colors duration-75 flex-shrink-0"
+              name="instagram"
+            />
           </a>
         </li>
       </ul>

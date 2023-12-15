@@ -3,24 +3,12 @@ import { themes } from '@/app/themes.js'
 
 export default {
   name: 'the-pocket',
-  props: {
-    links: {
-      type: Array,
-      required: true,
-    }
-  },
   data() {
     return {
       hoveringControls: false,
       scrollY: 0,
       themes,
     }
-  },
-  computed: {
-    controlsClasses() {
-      if (this.scrollY < 200 && !this.hoveringControls) return 'translate-x-32'
-      return 'translate-x-0'
-    },
   },
   mounted() {
     // todo: remove dom manipulation, use head method
@@ -48,24 +36,6 @@ export default {
       @mouseover="hoveringControls = true"
       @mouseout="hoveringControls = false"
     >
-      <ul
-        class="flex-col items-center text-right mb-8 transform transition-transform duration-200 ease-in-out"
-        :class="controlsClasses"
-      >
-        <li
-          v-for="link in links"
-          :key="link.text"
-          class="mb-4"
-        >
-          <nuxt-link
-            class="block relative text-theme-link hover:text-theme-link-hover text-xl"
-            :to="link.url"
-            exact
-          >
-            {{ link.text }}
-          </nuxt-link>
-        </li>
-      </ul>
       <select
         :value="$store.state.app.theme"
         aria-label="Themes"

@@ -11,22 +11,22 @@ export default {
           url: '/',
           text: 'TP'
         },
-        {
-          url: '/on-projects',
-          text: 'Projects'
-        },
+        // {
+        //   url: '/on-projects',
+        //   text: 'Projects'
+        // },
         // {
         //   url: '/on-writing',
         //   text: 'Blog'
         // },
-        {
-          url: '/on-networking',
-          text: 'Contact'
-        },
-        {
-          url: '/for-people',
-          text: 'CV'
-        },
+        // {
+        //   url: '/on-networking',
+        //   text: 'Contact'
+        // },
+        // {
+        //   url: '/for-people',
+        //   text: 'CV'
+        // },
       ]
     }
   },
@@ -54,7 +54,7 @@ export default {
   },
   head () {
     return {
-      title: 'Tyler Petz - Web Developer',
+      title: 'Tyler Petz - Comedian',
       link: [
         {
           hid: 'favicon',
@@ -67,7 +67,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Tyler Petz - Web Developer'
+          content: 'Tyler Petz - Comedian'
         },
       ],
       style: [
@@ -132,7 +132,6 @@ export default {
     class="bg-theme-bg text-theme-text font-body transition-colors duration-500 ease-in-out"
     :class="containerClass"
   >
-    <the-cap :links="links" />
     <main class="px-4 md:px-8 min-h-screen">
       <div class="w-full max-w-screen-lg mx-auto pt-40 print:pt-0">
         <transition name="page">
@@ -140,7 +139,6 @@ export default {
         </transition>
       </div>
     </main>
-    <the-pocket :links="links" />
     <the-shoes />
   </div>
 </template>
